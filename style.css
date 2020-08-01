@@ -1,0 +1,99 @@
+:root {
+	--bgcolor: #222229;
+	--txtcolor: #03a9f4;
+}
+
+body {
+	margin: 0;
+
+	background-color: var(--bgcolor);
+	color: var(--txtcolor);
+	font-family: "Segoe UI";	
+}
+
+.title {
+	text-align: center;
+}
+
+#board {
+	display: flex;
+	flex-direction: column;
+
+	width: 70vw;
+	height: 50vh;
+	margin: auto;
+}
+
+#mainBoard {
+	display: grid;
+	grid-template-areas: "player vs com"
+						 "result result result";
+	grid-template-columns: 30vw 10vw 30vw;
+	grid-template-rows: 30vh 10vh;
+}
+
+#playerBox {
+	grid-area: player;
+}
+
+#vsText {
+	grid-area: vs;
+	font-size: 1.4rem;
+	font-weight: bolder;
+}
+
+#comBox {
+	grid-area: com;
+}
+
+#playerBox, #comBox, #vsText {
+	text-align: center;
+	text-transform: capitalize;
+	margin: 1rem .5rem;
+	font-weight: bolder;
+	font-size: 1.2rem;
+}
+
+#resultDiv {
+	grid-area: result;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-weight: bolder;
+	font-size: 1.2rem;
+}
+
+button {
+	margin-top: .5rem;
+
+	border: 1px solid var(--txtcolor);
+	background-color: var(--bgcolor);
+	color: var(--txtcolor);
+	border-radius: 5%;
+	font-size: 1.2rem;
+
+	cursor: pointer;
+	outline: none;
+	transition: all .3s;
+}
+
+button:hover {
+	border: 1px solid var(--bgcolor);
+	background-color: var(--txtcolor);
+	color: var(--bgcolor);
+}
+
+footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	font-size: 1.2rem;
+
+	text-align: center;
+	background-color: var(--txtcolor);
+	color: var(--bgcolor);
+}
+
+.icon:hover, .button:hover {
+  fill: red;
+}
