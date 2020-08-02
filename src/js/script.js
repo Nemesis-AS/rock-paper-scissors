@@ -6,11 +6,11 @@ function startGame() {
 	gameBoard.innerHTML = `<div id="mainBoard">
 		<div id="playerBox">
 			<h3>Choose: </h3>
-			<button type="button" class="optionBtn" data-value="rock"><span>Rock</span></button>
-			<button type="button" class="optionBtn" data-value="paper">Paper</button>
-			<button type="button" class="optionBtn" data-value="scissors">Scissors</button>
+			<button type="button" class="optionBtn font-huge" data-value="rock"><i class="fas fa-hand-rock"></i></button>
+			<button type="button" class="optionBtn font-huge" data-value="paper"><i class="fas fa-hand-paper"></i></button>
+			<button type="button" class="optionBtn font-huge" data-value="scissors"><i class="fas fa-hand-scissors"></i></button>
 		</div>
-		<div id="vsText">Vs</div>
+		<div id="vsText"><div class="text-box">Vs</div></div>
 		<div id="comBox"></div>
 		<div id="resultDiv"></div>
 	</div>`;
@@ -21,10 +21,10 @@ function startGame() {
 }
 
 function handleInput() {
-	document.querySelector("#playerBox").innerHTML = this.dataset.value;
+	document.querySelector("#playerBox").innerHTML = `<div><i class="font-huge fas fa-hand-${this.dataset.value}"></i></div><p class="text-center font-med">${this.dataset.value}</p>`;
 
 	const comMove = moves[Math.floor(Math.random() * 3)];
-	document.querySelector("#comBox").innerHTML = comMove;
+	document.querySelector("#comBox").innerHTML = `<div><i class="font-huge fas fa-hand-${comMove}"></i></div><p class="text-center font-med">${comMove}</p>`;
 
 	getResults(this.dataset.value, comMove);
 }
